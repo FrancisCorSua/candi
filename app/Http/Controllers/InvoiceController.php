@@ -11,10 +11,11 @@ class InvoiceController extends Controller
         $date = \Carbon\Carbon::today()->subDays(30);
 
         $invoices = Invoice::where('pagadas', false)
-            ->where('created_at','>=',$date)
+            ->whereColumn('importePagado', '<', 'importeTotal')
             ->select(
                 'numeroFacturas',
                 'importeTotal',
+                'importePagado',
                 'fechaDesde',
                 'fechaHasta'
             )
