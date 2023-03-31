@@ -11,6 +11,7 @@ class Invoice extends Model
 
     protected $fillable = [
         'numeroFacturas',
+        'importePagado',
         'importeTotal',
         'fechaDesde',
         'fechaHasta'
