@@ -13,7 +13,7 @@ class InvoiceController extends Controller
         $invoices = Invoice::where('pagadas', false)
             ->whereColumn('importePagado', '<', 'importeTotal')
             ->select(
-                'numeroFacturas',
+                'id as numeroFacturas',
                 'importeTotal',
                 'importePagado',
                 'fechaDesde',
