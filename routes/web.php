@@ -2,9 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\{
-    Controller,
-};
+use App\Http\Controllers\InvoiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +19,8 @@ use App\Http\Controllers\{
 //     return view('welcome');
 // });
 
-Route::get('/', [Controller::class, 'index']);
+Route::get('/web/facturacion/facturas-impagadas.php', [InvoiceController::class, 'index']);
+
+Route::get('/cron/facturacion/facturas-impagadas.php',
+    /*Datos de configuración del cron para el primer día de cada mes  0 0 1 * *   */
+);
